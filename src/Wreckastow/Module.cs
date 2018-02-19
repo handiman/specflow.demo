@@ -25,7 +25,7 @@ namespace Wreckastow
 
         private object Index(object arg)
         {
-            var model = _albums.All();
+            var model = _albums.All().OrderByDescending(x => x.DateAvailable);
             return View["Index", model];
         }
     }
