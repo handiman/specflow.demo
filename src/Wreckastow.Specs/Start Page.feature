@@ -30,4 +30,11 @@ Scenario: Show Newest Records First
 	| Plectrumelectrum |
 	| Purple Rain      |
 	
-	
+Scenario: Album List Should Link To Details Page
+	When someone visits the start page
+	Then they see these albums:
+	| Title            | 
+	| Purple Rain      | 
+	| Lovesexy         | 
+	| Plectrumelectrum | 
+	And each album has a link to its details page
