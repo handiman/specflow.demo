@@ -24,7 +24,8 @@ namespace Wreckastow
 
         private object Index(object arg)
         {
-            return View["Index", Enumerable.Empty<Album>()];
+            var model = _albums.All();
+            return View["Index", model];
         }
     }
 }
