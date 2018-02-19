@@ -1,5 +1,6 @@
 ﻿using System;
 using Nancy;
+using Nancy.Bootstrapper;
 using Nancy.Bootstrappers.StructureMap;
 using StructureMap;
 using Wreckastow.Models;
@@ -9,10 +10,31 @@ namespace Wreckastow
 {
     public sealed class Bootstrapper : StructureMapNancyBootstrapper
     {
+        private readonly Action<ConfigurationExpression> _additionalConfiguration;
+
+        public Bootstrapper() { }
+
+        internal Bootstrapper(Action<ConfigurationExpression> additionalConfiguration)
+        {
+            _additionalConfiguration = additionalConfiguration;
+        }
+
+        protected override void ApplicationStartup(IContainer container, IPipelines pipelines)
+        {
+            base.ApplicationStartup(container, pipelines);
+            pipelines.OnError += OnError;
+        }
+
+        private static object OnError(NancyContext ctx, Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            return null;
+        }
+
         protected override void ConfigureRequestContainer(IContainer container, NancyContext context)
         {
             base.ConfigureRequestContainer(container, context);
-            container.Configure(conf =>  conf.For<IAlbumRepository>().Use(new AlbumRepositoryStub(new Album
+            container.Configure(conf => conf.For<IAlbumRepository>().Use(new AlbumRepositoryStub(new Album
                 {
                     Title = "Purple Rain",
                     Artist = "Prince & The Revolution",
@@ -36,6 +58,11 @@ It was released worldwide in June 1984, a month before the movie, Purple Rain op
                     DateAvailable = DateTime.Parse("2018-01-02")
                 }
             )));
+
+            if (_additionalConfiguration != null)
+            {
+                container.Configure(_additionalConfiguration);
+            }
         }
     }
 }

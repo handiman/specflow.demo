@@ -1,7 +1,10 @@
-﻿using Nancy;
+﻿using System;
+using System.Linq;
+using Nancy;
+using Wreckastow.Models;
 using Wreckastow.Services;
 
-namespace Wreckastow.Modules
+namespace Wreckastow
 {
     public sealed class Module : NancyModule
     {
@@ -11,12 +14,17 @@ namespace Wreckastow.Modules
         {
             _albums = albums;
             Get["/"] = Index;
+            Get["/album/{title}"] = Album;
+        }
+
+        private object Album(object arg)
+        {
+            return View["Details", new Album()];
         }
 
         private object Index(object arg)
         {
-            var model = _albums.All();
-            return View["Index", model];
+            return View["Index", Enumerable.Empty<Album>()];
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿@model System.Collections.Generic.IEnumerable<Wreckastow.Models.Album>
-<ul class="list-unstyled">
+<ul id="latest-albums" class="list-unstyled">
     @foreach (var album in Model) {
     <li class="album">
         <h4>@album.Title</h4>
