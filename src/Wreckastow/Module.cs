@@ -17,9 +17,10 @@ namespace Wreckastow
             Get["/album/{title}"] = Album;
         }
 
-        private object Album(object arg)
+        private object Album(dynamic arg)
         {
-            return View["Details", new Album()];
+            var album = _albums.All().Single(x => string.Equals(x.Title, arg.title.ToString(), StringComparison.InvariantCultureIgnoreCase));
+            return View["Details", album];
         }
 
         private object Index(object arg)

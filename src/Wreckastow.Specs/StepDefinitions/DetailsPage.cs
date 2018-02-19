@@ -50,7 +50,7 @@ namespace WreckaStow.Specs.StepDefinitions
                 .Trim();
 
             Assert.That(actualTitle, Is.EqualTo(_album.Title), "Title");
-            Assert.That(actualReleaseDate, Is.EqualTo(_album.ReleaseDate), "ReleaseDate");
+            Assert.That(actualReleaseDate, Is.EqualTo(_album.ReleaseDate.ToString("Y")), "ReleaseDate");
             Assert.That(actualDescription, Is.EqualTo(_album.Description), "Description");
         }
     }
