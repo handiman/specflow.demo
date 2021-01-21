@@ -1,0 +1,10 @@
+﻿@page
+@model IndexPage
+<ul id="latest-albums" class="list-unstyled">
+    @foreach (var album in Model.Albums)
+    {
+        <li>
+            <h4><a href="@Url.Page("Album", new { albumTitle = album.Title })">@album.Title</a></h4>
+        </li>
+    }
+</ul>

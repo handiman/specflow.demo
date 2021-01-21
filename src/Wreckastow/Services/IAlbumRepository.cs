@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Wreckastow.Models;
+using WreckaStow.Models;
 
-namespace Wreckastow.Services
+namespace WreckaStow.Services
 {
     public interface IAlbumRepository
     {

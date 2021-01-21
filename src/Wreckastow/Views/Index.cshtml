@@ -1,9 +1,0 @@
-﻿@using HttpUtility = Nancy.Helpers.HttpUtility
-@model System.Collections.Generic.IEnumerable<Wreckastow.Models.Album>
-<ul id="latest-albums" class="list-unstyled">
-    @foreach (var album in Model) {
-    <li>
-        <h4><a href="/album/@HttpUtility.UrlPathEncode(album.Title)">@album.Title</a></h4>
-    </li>
-    }
-</ul>

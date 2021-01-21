@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using TechTalk.SpecFlow;
-using Wreckastow.Models;
-using Wreckastow.Services;
+using WreckaStow.Models;
+using WreckaStow.Services;
 
 namespace WreckaStow.Specs.Support
 {

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Wreckastow.Models;
+using WreckaStow.Models;
 
-namespace Wreckastow.Services
+namespace WreckaStow.Services
 {
     public sealed class AlbumRepositoryStub : IAlbumRepository
     {

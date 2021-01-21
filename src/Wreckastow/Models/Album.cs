@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Wreckastow.Models
+namespace WreckaStow.Models
 {
     public sealed class Album
     {
