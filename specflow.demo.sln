@@ -6,12 +6,11 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{03010183-A1EA-4AB4-81F5-29465C7BB12C}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
-		SolutionInfo.cs = SolutionInfo.cs
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WreckaStow", "src\WreckaStow\WreckaStow.csproj", "{F4F6FC3A-E0E7-4B69-9B99-ABDC991F9725}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WreckaStow", "src\WreckaStow\WreckaStow.csproj", "{F4F6FC3A-E0E7-4B69-9B99-ABDC991F9725}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WreckaStow.Specs", "src\WreckaStow.Specs\WreckaStow.Specs.csproj", "{2DD7DE69-6F68-40EC-9806-915E72186F8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WreckaStow.Specs", "src\WreckaStow.Specs\WreckaStow.Specs.csproj", "{2DD7DE69-6F68-40EC-9806-915E72186F8E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
