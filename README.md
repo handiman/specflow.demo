@@ -1,6 +1,6 @@
 # SpecFlow Demo
 
-[![Build Status](https://dev.azure.com/henrikbecker/Demos/_apis/build/status/handiman.specflow.demo?branchName=master)](https://dev.azure.com/henrikbecker/Demos/_build/latest?definitionId=30&branchName=master)
+![Build status](https://dev.azure.com/henrikbecker/Demos/_apis/build/status/handiman.specflow.demo?branchName=master)
 
 ```
 As a developer
